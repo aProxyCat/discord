@@ -2,7 +2,6 @@
 <head>
   <base target="_blank">
   <style>
-    /* Ensure the iframe takes up the entire screen */
     body, html, iframe {
       margin: 0;
       padding: 0;
@@ -11,7 +10,6 @@
       overflow: hidden;
     }
 
-    /* iOS scrolling fix */
     .forceIosScrolling {
       overflow: scroll;
       -webkit-overflow-scrolling: touch;
@@ -24,9 +22,7 @@
 </head>
 
 <body>
-  <iframe id="innerFrame" name="innerFrame" 
-    sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads"
-    frameborder="0" allowfullscreen="" src="" style="overflow: auto;">
+  <iframe id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" allowfullscreen="" src="https://intastella.vercel.app/a/hvtrs8%2F-dksaopd%2Ccmm-cjalnglq%2FBmg" style="overflow: auto;">
   </iframe>
 
   <script>
@@ -103,10 +99,11 @@
       self.addEventListener('load', loadGapi);
     }
 
-    // Make sure the service worker or any other necessary assets are ready before setting the iframe src
+    // New code to update the iframe src dynamically
     const iframe = document.getElementById("innerFrame");
 
-    // Dynamically setting the iframe src (if __uv$config is correctly initialized in your context)
+    // Assuming __uv$config.prefix and __uv$config.encodeUrl are available in the global scope.
+    // If not, they would need to be defined first.
     iframe.src = __uv$config.prefix + __uv$config.encodeUrl("https://discord.com/login");
 
   </script>
